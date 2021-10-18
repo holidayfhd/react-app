@@ -1,7 +1,10 @@
-export function getData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({ playList: [1, 2, 3] });
-    }, 200);
+import request from "./axios";
+
+export function getData(idx) {
+  return request({
+    url: "/top/list",
+    params: {
+      idx,
+    },
   });
 }

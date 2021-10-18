@@ -17,8 +17,8 @@ function List() {
 
   return (
     <div>
-      {data.map((item, index) => (
-        <span key={index}>{item}</span>
+      {data.slice(0, 10).map((item, index) => (
+        <div key={item.id}>{item.name}</div>
       ))}
     </div>
   );

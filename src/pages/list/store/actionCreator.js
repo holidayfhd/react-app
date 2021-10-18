@@ -3,8 +3,7 @@ import { getData } from " ../../../src/services/list";
 
 export const getList = () => {
   return (dispath) => {
-    getData().then((res) => {
-      console.log(res);
+    getData(0).then((res) => {
       dispath(getDataAction(res));
     });
   };
@@ -12,5 +11,5 @@ export const getList = () => {
 
 const getDataAction = (res) => ({
   type: actionTypes.CHANGE_LIST,
-  list: res.playList,
+  list: res.playlist.tracks,
 });
