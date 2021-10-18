@@ -4,9 +4,10 @@ import { getList } from "./store/actionCreator";
 
 function List() {
   const dispatch = useDispatch();
-  const { data } = useSelector(
+  const { data, color } = useSelector(
     (state) => ({
       data: state.play.list,
+      color: state.color,
     }),
     shallowEqual
   );
@@ -18,7 +19,9 @@ function List() {
   return (
     <div>
       {data.slice(0, 10).map((item, index) => (
-        <div key={item.id}>{item.name}</div>
+        <div style={{ color: color }} key={item.id}>
+          {item.name}
+        </div>
       ))}
     </div>
   );
