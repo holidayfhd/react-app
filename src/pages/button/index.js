@@ -1,16 +1,19 @@
 import React, { memo } from "react";
-import { connect } from "react-redux";
+import { useSelector, shallowEqual } from "react-redux";
 import "./index.css";
 
-const mapStateToProps = (state) => ({ color: state.color });
 function Button(props) {
+  const { color } = useSelector(
+    (state) => ({ color: state.color }),
+    shallowEqual
+  );
   return (
     <div className="btnContainer">
-      <button className="btn mgt20" style={{ backgroundColor: props.color }}>
+      <button className="btn mgt20" style={{ backgroundColor: color }}>
         Primary Button
       </button>
     </div>
   );
 }
 
-export default memo(connect(mapStateToProps, () => ({}))(Button));
+export default memo(Button);

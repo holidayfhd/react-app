@@ -1,15 +1,10 @@
 import React, { memo } from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeBg } from "./store/actionCreator";
 import "./index.css";
 
-const mapStateToProps = (state) => ({ color: state.color });
-const mapDispathToProps = (dispath) => ({
-  changeColor: (color) => {
-    dispath(changeBg(color));
-  },
-});
 function Home(props) {
+  const dispatch = useDispatch();
   const colors = ["#e88b00", "#337d56", "#bf80ff", "#fc8705", "#c85b92"];
   return (
     <div className="colorContainer">
@@ -19,11 +14,11 @@ function Home(props) {
           className="colorRect"
           style={{ backgroundColor: color }}
           onClick={() => {
-            props.changeColor(color);
+            dispatch(changeBg(color));
           }}
         />
       ))}
     </div>
   );
 }
-export default memo(connect(mapStateToProps, mapDispathToProps)(Home));
+export default memo(Home);
