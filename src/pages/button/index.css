@@ -1,0 +1,14 @@
+.btn {
+  color: #fff;
+  /* background-color: rgb(24, 144, 255); */
+  border: none;
+  margin-right: 8px;
+  margin-bottom: 12px;
+  padding: 4px 15px;
+  font-size: 14px;
+  height: 32px;
+}
+.btnContainer {
+  margin-top: 20px;
+  text-align: center;
+}

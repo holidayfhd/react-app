@@ -1,0 +1,12 @@
+.colorContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.colorRect {
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+}
