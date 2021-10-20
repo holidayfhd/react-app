@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { useDispatch } from "react-redux";
-import { changeBg } from "./store/actionCreator";
+import { colorActions } from "./store/actionCreator";
 import "./index.css";
 
 function Home(props) {
@@ -14,7 +14,7 @@ function Home(props) {
           className="colorRect"
           style={{ backgroundColor: color }}
           onClick={() => {
-            dispatch(changeBg(color));
+            dispatch(colorActions.color.changeBg(color));
           }}
         />
       ))}

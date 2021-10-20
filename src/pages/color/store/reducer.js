@@ -1,5 +1,4 @@
-import { handleAction } from "redux-actions";
-import { changeBg } from "./actionCreator";
+import { handleActions } from "redux-actions";
 import * as actionTypes from "./constants";
 /* eslint-disable import/no-anonymous-default-export */
 const defaultState = "red";
@@ -12,10 +11,16 @@ const defaultState = "red";
 //       return state;
 //   }
 // };
-const colorReducer = handleAction(
-  actionTypes.CHANGE_BG,
-  (state, action) => {
-    return action.payload;
+// const colorReducer = handleAction(
+//   actionTypes.CHANGE_BG,
+//   (state, action) => {
+//     return action.payload;
+//   },
+//   defaultState
+// );
+const colorReducer = handleActions(
+  {
+    [actionTypes.CHANGE_BG]: (state, action) => action.payload,
   },
   defaultState
 );
